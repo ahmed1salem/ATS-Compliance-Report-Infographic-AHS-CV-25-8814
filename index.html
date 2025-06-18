@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Compliance Report Infographic - Ahmed Salem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Color Palette: Energetic & Playful -->
+    <!-- NEITHER Mermaid JS NOR SVG were used in this document. All visualizations are rendered via Chart.js (Canvas) or structured HTML/CSS. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            width: 100%;
+        }
+        .kpi-card {
+            background: linear-gradient(135deg, #003f5c, #374c80);
+        }
+        .recommendation-card {
+            background: linear-gradient(135deg, #ef5675, #bc5090);
+        }
+        .flowchart-step {
+            border-color: #ff764a;
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #ff764a;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003f5c]">ATS Compliance & Optimization Report</h1>
+            <p class="text-lg text-gray-600 mt-2">Analysis for: Ahmed Salem</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2 xl:col-span-1 p-6 rounded-2xl shadow-xl bg-white flex flex-col justify-center items-center text-center">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">Overall ATS Performance Score</h2>
+                <p class="text-gray-600 mb-4">The CV demonstrates exceptional foundational strength, poised for high performance in automated screening.</p>
+                <div class="chart-container" style="height: 280px; max-width: 280px;">
+                    <canvas id="overallScoreChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 xl:col-span-2 p-6 rounded-2xl shadow-xl bg-white">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4 text-center">Detailed Analysis Matrix</h2>
+                <p class="text-gray-600 mb-6 text-center">The analysis reveals near-perfect scores in structural and content areas, with a clear opportunity for improvement in chronological consistency.</p>
+                <div class="chart-container" style="height: 400px; max-width: 800px;">
+                    <canvas id="detailedScoresChart"></canvas>
+                </div>
+            </div>
+
+            <div class="kpi-card p-8 rounded-2xl shadow-xl text-white">
+                <h3 class="text-xl font-bold mb-2">✓ ATS Parsing & Integrity</h3>
+                <p class="text-8xl font-extrabold mb-2">99<span class="text-4xl">%</span></p>
+                <p class="opacity-80">Flawless architecture ensures all data is read correctly by automated systems.</p>
+            </div>
+
+            <div class="kpi-card p-8 rounded-2xl shadow-xl text-white">
+                <h3 class="text-xl font-bold mb-2">✓ Keyword Optimization</h3>
+                <p class="text-8xl font-extrabold mb-2">95<span class="text-4xl">%</span></p>
+                <p class="opacity-80">Rich with relevant keywords, ensuring a high match rate for target roles in AI and Web Development.</p>
+            </div>
+            
+            <div class="kpi-card p-8 rounded-2xl shadow-xl text-white">
+                <h3 class="text-xl font-bold mb-2">✓ Impact Quantification</h3>
+                <p class="text-8xl font-extrabold mb-2">98<span class="text-4xl">%</span></p>
+                <p class="opacity-80">Achievements are framed with strong metrics, demonstrating tangible value and impact.</p>
+            </div>
+            
+            <div class="recommendation-card md:col-span-2 xl:col-span-3 p-8 rounded-2xl shadow-xl text-white">
+                <h2 class="text-3xl font-bold text-center mb-6">Critical Recommendation: Enhance Clarity</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center">
+                    <div class="md:col-span-1">
+                        <h3 class="text-xl font-bold mb-2">Area for Improvement</h3>
+                        <p class="text-7xl font-extrabold">84<span class="text-3xl">%</span></p>
+                        <p class="font-semibold mt-2">Clarity & Chronological Consistency</p>
+                        <p class="opacity-80 mt-2">A critical flaw was identified: future dates are paired with past-tense descriptions, creating a logical conflict that undermines credibility.</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-6">Path to a 100/100 Score</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                            <div class="flowchart-step border-4 rounded-lg p-4 w-full md:w-auto">
+                                <p class="font-bold">1. Review Dates</p>
+                                <p class="text-sm opacity-90">Examine every role in the 'Experience' section.</p>
+                            </div>
+                            <div class="flowchart-arrow transform md:-rotate-0 rotate-90">➤</div>
+                            <div class="flowchart-step border-4 rounded-lg p-4 w-full md:w-auto">
+                                <p class="font-bold">2. Correct Tenses</p>
+                                <p class="text-sm opacity-90">Align verb tenses with the work period (present for ongoing, past for completed).</p>
+                            </div>
+                            <div class="flowchart-arrow transform md:-rotate-0 rotate-90">➤</div>
+                             <div class="flowchart-step border-4 rounded-lg p-4 w-full md:w-auto">
+                                <p class="font-bold">3. Ensure Accuracy</p>
+                                <p class="text-sm opacity-90">Confirm all dates reflect the actual period of work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-12 p-6 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold text-[#003f5c]">Final Conclusion</h2>
+            <p class="text-gray-600 mt-2 max-w-3xl mx-auto">Ahmed Salem has crafted a technically superior CV that is poised for success. Its structure and content are of an exceptionally high caliber. By resolving the chronological inconsistencies, this document will become a powerful and unambiguous tool for securing top-tier opportunities.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const wrapLabel = (label, maxWidth = 16) => {
+                if (typeof label !== 'string' || label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const colors = {
+                blue: '#003f5c',
+                purple: '#7a5195',
+                pink: '#ef5675',
+                orange: '#ff764a',
+                yellow: '#ffa600',
+                background: 'rgba(0, 0, 0, 0.05)'
+            };
+            
+            // Custom plugin to draw text in the middle of a doughnut chart
+            const doughnutTextPlugin = {
+                id: 'doughnutText',
+                beforeDraw: (chart) => {
+                    if (chart.config.type === 'doughnut' && chart.config.options.plugins.doughnutText) {
+                        const { text, font, color } = chart.config.options.plugins.doughnutText;
+                        const { width, height, ctx } = chart;
+                        ctx.restore();
+                        const fontSize = (height / 114).toFixed(2);
+                        ctx.font = `${fontSize}em ${font.family || 'Inter'}`;
+                        ctx.textBaseline = 'middle';
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = color || '#000';
+                        
+                        const textX = Math.round(width / 2);
+                        const textY = Math.round(height / 2);
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }
+            };
+
+            Chart.register(doughnutTextPlugin);
+
+
+            const overallScoreCtx = document.getElementById('overallScoreChart').getContext('2d');
+            new Chart(overallScoreCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Performance Score', 'Remaining'],
+                    datasets: [{
+                        data: [94, 6],
+                        backgroundColor: [colors.orange, colors.background],
+                        borderColor: [colors.orange, 'transparent'],
+                        borderWidth: 2,
+                        cutout: '80%',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false },
+                        doughnutText: {
+                           text: '94/100',
+                           color: colors.blue,
+                           font: {
+                               size: '50',
+                               weight: 'bold',
+                               family: 'Inter'
+                           },
+                        }
+                    }
+                }
+            });
+
+            const detailedScoresCtx = document.getElementById('detailedScoresChart').getContext('2d');
+            const rawLabels = [
+                'ATS Parsing & Structural Integrity', 
+                'Keyword & Content Optimization', 
+                'Impact & Achievement Quantification', 
+                'Clarity & Chronological Consistency'
+            ];
+            new Chart(detailedScoresCtx, {
+                type: 'bar',
+                data: {
+                    labels: rawLabels.map(label => wrapLabel(label, 25)),
+                    datasets: [{
+                        label: 'Score',
+                        data: [99, 95, 98, 84],
+                        backgroundColor: [colors.blue, colors.purple, colors.pink, colors.orange],
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
+                        borderRadius: 8,
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: colors.blue,
+                                font: { weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: colors.blue,
+                                font: { size: 14 }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            },
+                            backgroundColor: colors.blue,
+                            titleFont: { size: 14 },
+                            bodyFont: { size: 12 },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
