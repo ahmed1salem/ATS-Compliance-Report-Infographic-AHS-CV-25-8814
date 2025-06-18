@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATS Compliance Report Infographic - Ahmed Salem</title>
+    <title>AI-Powered ATS Compliance Report Infographic - Ahmed Salem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +34,33 @@
             font-size: 2.5rem;
             line-height: 1;
             color: #ff764a;
+        }
+        .gemini-card {
+            background: #ffffff;
+        }
+        .gemini-button {
+            background-color: #ff764a;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .gemini-button:hover {
+            background-color: #ef5675;
+        }
+        .gemini-result {
+            background-color: #f0f2f5;
+            border-left: 4px solid #ff764a;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff764a;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -72,13 +99,13 @@
             <div class="kpi-card p-8 rounded-2xl shadow-xl text-white">
                 <h3 class="text-xl font-bold mb-2">✓ Keyword Optimization</h3>
                 <p class="text-8xl font-extrabold mb-2">95<span class="text-4xl">%</span></p>
-                <p class="opacity-80">Rich with relevant keywords, ensuring a high match rate for target roles in AI and Web Development.</p>
+                <p class="opacity-80">Rich with relevant keywords, ensuring a high match rate for target roles.</p>
             </div>
             
             <div class="kpi-card p-8 rounded-2xl shadow-xl text-white">
                 <h3 class="text-xl font-bold mb-2">✓ Impact Quantification</h3>
                 <p class="text-8xl font-extrabold mb-2">98<span class="text-4xl">%</span></p>
-                <p class="opacity-80">Achievements are framed with strong metrics, demonstrating tangible value and impact.</p>
+                <p class="opacity-80">Achievements are framed with strong metrics, demonstrating tangible value.</p>
             </div>
             
             <div class="recommendation-card md:col-span-2 xl:col-span-3 p-8 rounded-2xl shadow-xl text-white">
@@ -88,7 +115,7 @@
                         <h3 class="text-xl font-bold mb-2">Area for Improvement</h3>
                         <p class="text-7xl font-extrabold">84<span class="text-3xl">%</span></p>
                         <p class="font-semibold mt-2">Clarity & Chronological Consistency</p>
-                        <p class="opacity-80 mt-2">A critical flaw was identified: future dates are paired with past-tense descriptions, creating a logical conflict that undermines credibility.</p>
+                        <p class="opacity-80 mt-2">A critical flaw was identified: future dates are paired with past-tense descriptions.</p>
                     </div>
                     <div class="md:col-span-2">
                         <h3 class="text-2xl font-bold mb-6">Path to a 100/100 Score</h3>
@@ -100,7 +127,7 @@
                             <div class="flowchart-arrow transform md:-rotate-0 rotate-90">➤</div>
                             <div class="flowchart-step border-4 rounded-lg p-4 w-full md:w-auto">
                                 <p class="font-bold">2. Correct Tenses</p>
-                                <p class="text-sm opacity-90">Align verb tenses with the work period (present for ongoing, past for completed).</p>
+                                <p class="text-sm opacity-90">Align verb tenses with the work period.</p>
                             </div>
                             <div class="flowchart-arrow transform md:-rotate-0 rotate-90">➤</div>
                              <div class="flowchart-step border-4 rounded-lg p-4 w-full md:w-auto">
@@ -111,31 +138,55 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Gemini API Features Section -->
+            <section class="md:col-span-2 xl:col-span-3 p-8 rounded-2xl shadow-xl bg-white">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#003f5c]">✨ AI-Powered Career Toolkit</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Feature 1: Bullet Point Suggestions -->
+                    <div class="gemini-card p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-[#7a5195] mb-2">Improve CV Experience Points</h3>
+                        <p class="text-gray-600 mb-4">Get AI-powered suggestions to rewrite your experience points, fixing the date/tense inconsistency and making them more impactful for an ongoing role.</p>
+                        <button id="generateSuggestionsBtn" class="gemini-button font-bold py-2 px-4 rounded-lg inline-flex items-center">
+                            <span class="mr-2">✨ Generate Suggestions</span>
+                            <div id="loader-suggestions" class="loader hidden"></div>
+                        </button>
+                        <div id="suggestionsResult" class="gemini-result p-4 mt-4 rounded-lg hidden"></div>
+                    </div>
+
+                    <!-- Feature 2: Cover Letter Intro -->
+                    <div class="gemini-card p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-[#7a5195] mb-2">Draft Cover Letter Intro</h3>
+                        <p class="text-gray-600 mb-4">Generate a powerful, customized opening paragraph for a cover letter targeting a tech-focused internship, based on your professional summary.</p>
+                        <button id="generateIntroBtn" class="gemini-button font-bold py-2 px-4 rounded-lg inline-flex items-center">
+                             <span class="mr-2">✨ Draft Introduction</span>
+                             <div id="loader-intro" class="loader hidden"></div>
+                        </button>
+                        <div id="introResult" class="gemini-result p-4 mt-4 rounded-lg hidden"></div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="text-center mt-12 p-6 bg-white rounded-2xl shadow-xl">
             <h2 class="text-2xl font-bold text-[#003f5c]">Final Conclusion</h2>
-            <p class="text-gray-600 mt-2 max-w-3xl mx-auto">Ahmed Salem has crafted a technically superior CV that is poised for success. Its structure and content are of an exceptionally high caliber. By resolving the chronological inconsistencies, this document will become a powerful and unambiguous tool for securing top-tier opportunities.</p>
+            <p class="text-gray-600 mt-2 max-w-3xl mx-auto">Ahmed Salem has crafted a technically superior CV. By resolving the chronological inconsistencies and leveraging AI-powered tools, this document will become a powerful instrument for securing top-tier opportunities.</p>
         </footer>
-
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
+            // --- Existing Chart.js and helper functions ---
             const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
                 let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                    return label.join(' ');
-                }
+                if (Array.isArray(label)) { return label.join(' '); }
                 return label;
             };
 
             const wrapLabel = (label, maxWidth = 16) => {
-                if (typeof label !== 'string' || label.length <= maxWidth) {
-                    return label;
-                }
+                if (typeof label !== 'string' || label.length <= maxWidth) { return label; }
                 const words = label.split(' ');
                 const lines = [];
                 let currentLine = '';
@@ -147,9 +198,7 @@
                         currentLine = (currentLine + ' ' + word).trim();
                     }
                 });
-                if (currentLine) {
-                    lines.push(currentLine.trim());
-                }
+                if (currentLine) { lines.push(currentLine.trim()); }
                 return lines;
             };
 
@@ -158,11 +207,9 @@
                 purple: '#7a5195',
                 pink: '#ef5675',
                 orange: '#ff764a',
-                yellow: '#ffa600',
                 background: 'rgba(0, 0, 0, 0.05)'
             };
             
-            // Custom plugin to draw text in the middle of a doughnut chart
             const doughnutTextPlugin = {
                 id: 'doughnutText',
                 beforeDraw: (chart) => {
@@ -175,114 +222,98 @@
                         ctx.textBaseline = 'middle';
                         ctx.textAlign = 'center';
                         ctx.fillStyle = color || '#000';
-                        
                         const textX = Math.round(width / 2);
                         const textY = Math.round(height / 2);
-
                         ctx.fillText(text, textX, textY);
                         ctx.save();
                     }
                 }
             };
-
             Chart.register(doughnutTextPlugin);
 
-
-            const overallScoreCtx = document.getElementById('overallScoreChart').getContext('2d');
-            new Chart(overallScoreCtx, {
+            new Chart(document.getElementById('overallScoreChart').getContext('2d'), {
                 type: 'doughnut',
                 data: {
                     labels: ['Performance Score', 'Remaining'],
-                    datasets: [{
-                        data: [94, 6],
-                        backgroundColor: [colors.orange, colors.background],
-                        borderColor: [colors.orange, 'transparent'],
-                        borderWidth: 2,
-                        cutout: '80%',
-                    }]
+                    datasets: [{ data: [94, 6], backgroundColor: [colors.orange, colors.background], borderColor: [colors.orange, 'transparent'], borderWidth: 2, cutout: '80%' }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { enabled: false },
-                        doughnutText: {
-                           text: '94/100',
-                           color: colors.blue,
-                           font: {
-                               size: '50',
-                               weight: 'bold',
-                               family: 'Inter'
-                           },
-                        }
-                    }
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { enabled: false }, doughnutText: { text: '94/100', color: colors.blue, font: { size: '50', weight: 'bold', family: 'Inter' } } }
                 }
             });
 
-            const detailedScoresCtx = document.getElementById('detailedScoresChart').getContext('2d');
-            const rawLabels = [
-                'ATS Parsing & Structural Integrity', 
-                'Keyword & Content Optimization', 
-                'Impact & Achievement Quantification', 
-                'Clarity & Chronological Consistency'
-            ];
-            new Chart(detailedScoresCtx, {
+            new Chart(document.getElementById('detailedScoresChart').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: rawLabels.map(label => wrapLabel(label, 25)),
-                    datasets: [{
-                        label: 'Score',
-                        data: [99, 95, 98, 84],
-                        backgroundColor: [colors.blue, colors.purple, colors.pink, colors.orange],
-                        borderColor: '#ffffff',
-                        borderWidth: 2,
-                        borderRadius: 8,
-                    }]
+                    labels: ['ATS Parsing & Structural Integrity', 'Keyword & Content Optimization', 'Impact & Achievement Quantification', 'Clarity & Chronological Consistency'].map(l => wrapLabel(l, 25)),
+                    datasets: [{ label: 'Score', data: [99, 95, 98, 84], backgroundColor: [colors.blue, colors.purple, colors.pink, colors.orange], borderColor: '#ffffff', borderWidth: 2, borderRadius: 8 }]
                 },
                 options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            max: 100,
-                            grid: {
-                                display: false,
-                                drawBorder: false
-                            },
-                            ticks: {
-                                color: colors.blue,
-                                font: { weight: 'bold' }
-                            }
-                        },
-                        y: {
-                            grid: {
-                                display: false,
-                                drawBorder: false
-                            },
-                            ticks: {
-                                color: colors.blue,
-                                font: { size: 14 }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            },
-                            backgroundColor: colors.blue,
-                            titleFont: { size: 14 },
-                            bodyFont: { size: 12 },
-                            padding: 12,
-                            cornerRadius: 8,
-                            displayColors: false
-                        }
-                    }
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    scales: { x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { color: colors.blue, font: { weight: 'bold' } } }, y: { grid: { display: false }, ticks: { color: colors.blue, font: { size: 14 } } } },
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }, backgroundColor: colors.blue, titleFont: { size: 14 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, displayColors: false } }
                 }
+            });
+
+            // --- Gemini API Integration ---
+            const generateSuggestionsBtn = document.getElementById('generateSuggestionsBtn');
+            const generateIntroBtn = document.getElementById('generateIntroBtn');
+
+            const callGeminiAPI = async (prompt, resultContainerId, loaderId) => {
+                const resultContainer = document.getElementById(resultContainerId);
+                const loader = document.getElementById(loaderId);
+
+                loader.classList.remove('hidden');
+                resultContainer.classList.add('hidden');
+                resultContainer.innerText = '';
+                
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{ role: "user", parts: [{ text: prompt }] }]
+                };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        resultContainer.innerText = text;
+                    } else {
+                        resultContainer.innerText = 'Could not generate a response. Please try again.';
+                    }
+                } catch (error) {
+                    console.error('Gemini API call failed:', error);
+                    resultContainer.innerText = 'An error occurred while contacting the AI. Please check the console for details.';
+                } finally {
+                    loader.classList.add('hidden');
+                    resultContainer.classList.remove('hidden');
+                }
+            };
+            
+            generateSuggestionsBtn.addEventListener('click', () => {
+                const prompt = `A student's CV has an experience entry listed as 'June 2025 - Present'. The descriptions are in the past tense, which is confusing for an ongoing role. Please rewrite the following two bullet points in the present tense to be more impactful and clear:
+1. 'Developed Al-powered websites and applications, integrating machine learning APIs (e.g., ChatGPT, TensorFlow.js).'
+2. 'Delivered training on full-stack web development using frameworks like React, Node.js, and Odoo.'`;
+                callGeminiAPI(prompt, 'suggestionsResult', 'loader-suggestions');
+            });
+
+            generateIntroBtn.addEventListener('click', () => {
+                const prompt = `Based on the following professional summary, write a powerful and concise opening paragraph for a cover letter for a 'Tech-Focused Internship'. The tone should be professional and confident.
+Summary: 'Motivated student with a strong foundation in AI web development, leadership, and content creation, complemented by certifications in cybersecurity, public speaking, and digital marketing. Skilled in developing websites using frameworks like Odoo, React, and Node.js, and delivering technical training. Experienced in leading tech initiatives and volunteering with global organizations.'`;
+                callGeminiAPI(prompt, 'introResult', 'loader-intro');
             });
         });
     </script>
