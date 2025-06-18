@@ -163,8 +163,17 @@
                 const footerContainer = document.getElementById('page-footer');
                 if (!footerContainer) return;
 
-                const quickLinksHTML = data.quickLinks.links.map(link => `<li><a href="${link.href}" class="hover:text-ff764a transition-colors">${link.text}</a></li>`).join('');
-                const socialLinksHTML = data.social.links.map(link => `<a href="${link.href}" aria-label="${link.name}" class="text-gray-300 hover:text-white">${link.icon}</a>`).join('');
+                const quickLinksHTML = data.quickLinks.links.map(link => `<li><a href="${link.href}" class="hover:text-ff764a transition-colors" target="_blank" rel="noopener noreferrer">${link.text}</a></li>`).join('');
+                const socialLinksHTML = data.social.links.map(link => `<a href="${link.href}" aria-label="${link.name}" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">${link.icon}</a>`).join('');
+
+                // Build Contact Us list conditionally
+                let contactListHTML = '';
+                if (data.contact.email) {
+                    contactListHTML += `<li><a href="mailto:${data.contact.email}" class="hover:text-white">${data.contact.email}</a></li>`;
+                }
+                if (data.contact.other) {
+                    contactListHTML += `<li><span>${data.contact.other}</span></li>`;
+                }
 
                 footerContainer.innerHTML = `
                     <div class="container mx-auto px-6 py-12">
@@ -179,10 +188,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold tracking-wider uppercase">${data.contact.title}</h3>
-                                <ul class="mt-4 space-y-2 text-gray-300">
-                                    <li><a href="mailto:${data.contact.email}" class="hover:text-white">${data.contact.email}</a></li>
-                                    <li><span>${data.contact.other}</span></li>
-                                </ul>
+                                <ul class="mt-4 space-y-2 text-gray-300">${contactListHTML}</ul>
                             </div>
                             <div>
                                 <h3 class="font-semibold tracking-wider uppercase">${data.social.title}</h3>
