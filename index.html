@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered ATS Compliance Report Infographic - Ahmed Salem</title>
+    <title>ATS Compliance Report Infographic - Ahmed Salem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,40 +35,8 @@
             line-height: 1;
             color: #ff764a;
         }
-        .gemini-card {
-            background: #ffffff;
-        }
-        .gemini-button {
-            background-color: #ff764a;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        .gemini-button:hover {
-            background-color: #ef5675;
-        }
-        .gemini-result {
-            background-color: #f0f2f5;
-            border-left: 4px solid #ff764a;
-        }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #ff764a;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
         .footer-bg {
             background-color: #003f5c;
-        }
-        .security-warning {
-            background-color: #fffbe6;
-            border: 1px solid #fbbF24;
-            color: #92400e;
         }
     </style>
 </head>
@@ -146,91 +114,91 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Gemini API Features Section -->
-            <section class="md:col-span-2 xl:col-span-3 p-8 rounded-2xl shadow-xl bg-white" id="ai-toolkit">
-                <h2 class="text-3xl font-bold text-center mb-6 text-[#003f5c]">✨ AI-Powered Career Toolkit</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Feature 1: Bullet Point Suggestions -->
-                    <div class="gemini-card p-6 rounded-lg border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#7a5195] mb-2">Improve CV Experience Points</h3>
-                        <p class="text-gray-600 mb-4">Get AI-powered suggestions to rewrite your experience points, fixing the date/tense inconsistency and making them more impactful for an ongoing role.</p>
-                        <button id="generateSuggestionsBtn" class="gemini-button font-bold py-2 px-4 rounded-lg inline-flex items-center">
-                            <span class="mr-2">✨ Generate Suggestions</span>
-                            <div id="loader-suggestions" class="loader hidden"></div>
-                        </button>
-                        <div id="suggestionsResult" class="gemini-result p-4 mt-4 rounded-lg hidden"></div>
-                    </div>
-
-                    <!-- Feature 2: Cover Letter Intro -->
-                    <div class="gemini-card p-6 rounded-lg border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#7a5195] mb-2">Draft Cover Letter Intro</h3>
-                        <p class="text-gray-600 mb-4">Generate a powerful, customized opening paragraph for a cover letter targeting a tech-focused internship, based on your professional summary.</p>
-                        <button id="generateIntroBtn" class="gemini-button font-bold py-2 px-4 rounded-lg inline-flex items-center">
-                             <span class="mr-2">✨ Draft Introduction</span>
-                             <div id="loader-intro" class="loader hidden"></div>
-                        </button>
-                        <div id="introResult" class="gemini-result p-4 mt-4 rounded-lg hidden"></div>
-                    </div>
-                </div>
-                 <!-- Security Warning -->
-                <div class="security-warning p-4 mt-8 rounded-lg">
-                    <p class="font-bold">Important Security Information for using the AI Toolkit:</p>
-                    <p class="mt-2">To use the AI features on your hosted site, you need to provide your own Gemini API Key. Please follow the instructions in the script section of this file. <strong class="font-bold">NEVER commit your API key to a public repository.</strong> It is critical to restrict your API key to your website's domain to prevent misuse.</p>
-                </div>
-            </section>
         </main>
     </div>
 
-    <footer class="footer-bg text-white mt-12">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Brand Info -->
-                <div class="md:col-span-1">
-                    <h2 class="text-2xl font-bold">AlgoHive Solutions</h2>
-                    <p class="mt-2 text-gray-300">Precision Engineered Technical Solutions.</p>
-                </div>
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="font-semibold tracking-wider uppercase">Quick Links</h3>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#analysis-matrix" class="hover:text-ff764a transition-colors">Analysis</a></li>
-                        <li><a href="#recommendations" class="hover:text-ff764a transition-colors">Recommendations</a></li>
-                        <li><a href="#ai-toolkit" class="hover:text-ff764a transition-colors">AI Toolkit</a></li>
-                    </ul>
-                </div>
-                <!-- Contact -->
-                <div>
-                    <h3 class="font-semibold tracking-wider uppercase">Contact Us</h3>
-                    <ul class="mt-4 space-y-2 text-gray-300">
-                        <li><a href="mailto:contact@algohive.net" class="hover:text-white">contact@algohive.net</a></li>
-                        <li><span>Live Chat, Phone Support</span></li>
-                    </ul>
-                </div>
-                <!-- Social -->
-                <div>
-                    <h3 class="font-semibold tracking-wider uppercase">Follow Us</h3>
-                    <div class="flex mt-4 space-x-4">
-                        <a href="#" aria-label="LinkedIn" class="text-gray-300 hover:text-white">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </a>
-                        <a href="#" aria-label="Twitter" class="text-gray-300 hover:text-white">
-                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.584-.666 2.477 0 1.791.912 3.372 2.298 4.293-.846-.027-1.647-.26-2.353-.645v.059c0 2.497 1.777 4.581 4.141 5.063-.432.117-.89.18-1.36.18-.332 0-.655-.032-.968-.094.656 2.045 2.563 3.531 4.823 3.572-1.764 1.383-3.986 2.206-6.402 2.206-.416 0-.827-.025-1.229-.074 2.278 1.458 4.986 2.306 7.876 2.306 9.457 0 14.629-7.846 14.629-14.631 0-.223-.005-.446-.014-.668.995-.717 1.861-1.621 2.559-2.658z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 AlgoHive Solutions. All Rights Reserved.</p>
-            </div>
-        </div>
+    <footer id="page-footer" class="footer-bg text-white mt-12">
+        <!-- Footer content will be generated by JavaScript -->
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Existing Chart.js and helper functions ---
-            // ... (All chart code remains the same)
+            // --- DYNAMIC FOOTER CONFIGURATION ---
+            const footerData = {
+                brand: {
+                    name: "AlgoHive Solutions",
+                    slogan: "Precision Engineered Technical Solutions."
+                },
+                quickLinks: {
+                    title: "Quick Links",
+                    links: [
+                        { text: "Home Page", href: "https://www.algohive.net" },
+                        { text: "Services", href: "https://www.algohive.net/shop" }
+                    ]
+                },
+                contact: {
+                    title: "Contact Us",
+                    email: "info@algohive.net",
+                },
+                social: {
+                    title: "Follow Us",
+                    links: [
+                        { 
+                            name: "LinkedIn", 
+                            href: "https://www.linkedin.com/company/algohive-solutions", 
+                            icon: `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>` 
+                        },
+                        { 
+                            name: "Facebook", 
+                            href: "https://www.facebook.com/algohive.solutions", 
+                            icon: `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>`
+                        }
+                    ]
+                },
+                copyright: `&copy; ${new Date().getFullYear()} AlgoHive Solutions. All Rights Reserved.`
+            };
+
+            function generateFooter(data) {
+                const footerContainer = document.getElementById('page-footer');
+                if (!footerContainer) return;
+
+                const quickLinksHTML = data.quickLinks.links.map(link => `<li><a href="${link.href}" class="hover:text-ff764a transition-colors">${link.text}</a></li>`).join('');
+                const socialLinksHTML = data.social.links.map(link => `<a href="${link.href}" aria-label="${link.name}" class="text-gray-300 hover:text-white">${link.icon}</a>`).join('');
+
+                footerContainer.innerHTML = `
+                    <div class="container mx-auto px-6 py-12">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="md:col-span-1">
+                                <h2 class="text-2xl font-bold">${data.brand.name}</h2>
+                                <p class="mt-2 text-gray-300">${data.brand.slogan}</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold tracking-wider uppercase">${data.quickLinks.title}</h3>
+                                <ul class="mt-4 space-y-2">${quickLinksHTML}</ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold tracking-wider uppercase">${data.contact.title}</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300">
+                                    <li><a href="mailto:${data.contact.email}" class="hover:text-white">${data.contact.email}</a></li>
+                                    <li><span>${data.contact.other}</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold tracking-wider uppercase">${data.social.title}</h3>
+                                <div class="flex mt-4 space-x-4">${socialLinksHTML}</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
+                            <p>${data.copyright}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            generateFooter(footerData);
+
+            // --- Chart.js and helper functions ---
              const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
                 let label = item.chart.data.labels[item.dataIndex];
@@ -307,89 +275,6 @@
                     scales: { x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { color: colors.blue, font: { weight: 'bold' } } }, y: { grid: { display: false }, ticks: { color: colors.blue, font: { size: 14 } } } },
                     plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }, backgroundColor: colors.blue, titleFont: { size: 14 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, displayColors: false } }
                 }
-            });
-
-
-            // --- Gemini API Integration ---
-            const generateSuggestionsBtn = document.getElementById('generateSuggestionsBtn');
-            const generateIntroBtn = document.getElementById('generateIntroBtn');
-
-            // --- HOW TO FIX THE AI TOOLKIT ON GITHUB PAGES ---
-            // 1. Get your API Key: Go to Google AI Studio (https://aistudio.google.com/) and create an API key.
-            // 2. Insert your key below: Replace the "YOUR_API_KEY_HERE" string with the key you generated.
-            //
-            // !!! SECURITY WARNING !!!
-            // DO NOT share this file publicly with your API key inside it. Anyone can use your key and cause charges on your account.
-            // TO SECURE YOUR KEY:
-            // a. Go to your Google Cloud Console project.
-            // b. Go to "APIs & Services" > "Credentials".
-            // c. Find your API key and edit it.
-            // d. Under "Application restrictions", select "HTTP referrers (web sites)".
-            // e. Add your GitHub pages URL, like: `https://YOUR_USERNAME.github.io/*`
-            // This ensures the key ONLY works when a request is made from your website.
-            const apiKey = "AIzaSyD1MqaO_YvTUT05QENIQBuG2BSTuhwXnU0"; 
-
-            const callGeminiAPI = async (prompt, resultContainerId, loaderId) => {
-                const resultContainer = document.getElementById(resultContainerId);
-                const loader = document.getElementById(loaderId);
-                
-                if (apiKey === "AIzaSyD1MqaO_YvTUT05QENIQBuG2BSTuhwXnU0" || !apiKey) {
-                    resultContainer.innerText = "API Key not provided. Please follow the instructions in the code to add your API key.";
-                    resultContainer.classList.remove('hidden');
-                    return;
-                }
-
-                loader.classList.remove('hidden');
-                resultContainer.classList.add('hidden');
-                resultContainer.innerText = '';
-                
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ role: "user", parts: [{ text: prompt }] }]
-                };
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        const errorBody = await response.json();
-                        console.error('API Error Response:', errorBody);
-                        throw new Error(`API Error: ${response.statusText}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        resultContainer.innerText = text;
-                    } else {
-                        resultContainer.innerText = 'Could not generate a response. The model may have returned empty content. Please try again.';
-                    }
-                } catch (error) {
-                    console.error('Gemini API call failed:', error);
-                    resultContainer.innerText = 'An error occurred while contacting the AI. This is often due to an incorrect or unrestricted API key. Please check the browser console for details.';
-                } finally {
-                    loader.classList.add('hidden');
-                    resultContainer.classList.remove('hidden');
-                }
-            };
-            
-            generateSuggestionsBtn.addEventListener('click', () => {
-                const prompt = `A student's CV has an experience entry listed as 'June 2025 - Present'. The descriptions are in the past tense, which is confusing for an ongoing role. Please rewrite the following two bullet points in the present tense to be more impactful and clear:
-1. 'Developed Al-powered websites and applications, integrating machine learning APIs (e.g., ChatGPT, TensorFlow.js).'
-2. 'Delivered training on full-stack web development using frameworks like React, Node.js, and Odoo.'`;
-                callGeminiAPI(prompt, 'suggestionsResult', 'loader-suggestions');
-            });
-
-            generateIntroBtn.addEventListener('click', () => {
-                const prompt = `Based on the following professional summary, write a powerful and concise opening paragraph for a cover letter for a 'Tech-Focused Internship'. The tone should be professional and confident.
-Summary: 'Motivated student with a strong foundation in AI web development, leadership, and content creation, complemented by certifications in cybersecurity, public speaking, and digital marketing. Skilled in developing websites using frameworks like Odoo, React, and Node.js, and delivering technical training. Experienced in leading tech initiatives and volunteering with global organizations.'`;
-                callGeminiAPI(prompt, 'introResult', 'loader-intro');
             });
         });
     </script>
